@@ -1,0 +1,241 @@
+<title>うさぎの30秒サバイバル サポート</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff0f6;
+    --surface: #ffffff;
+    --ink: #4a2c3a;
+    --ink-soft: #8a6b78;
+    --pink: #ff4d8d;
+    --pink-deep: #d81b60;
+    --accent: #ff8c3c;
+    --line: #ffd9ec;
+    --focus: #1d4ed8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #221420;
+      --surface: #2f1c2b;
+      --ink: #ffe9f3;
+      --ink-soft: #d8b4c4;
+      --pink: #ff6fa5;
+      --pink-deep: #ff8fb8;
+      --accent: #ffab6b;
+      --line: #4a2d42;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #221420;
+    --surface: #2f1c2b;
+    --ink: #ffe9f3;
+    --ink-soft: #d8b4c4;
+    --pink: #ff6fa5;
+    --pink-deep: #ff8fb8;
+    --accent: #ffab6b;
+    --line: #4a2d42;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    padding-inline: 20px;
+  }
+  a { color: var(--pink-deep); text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-block: 48px 64px;
+  }
+
+  header.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding-block: 12px 36px;
+  }
+  .icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 24px;
+    box-shadow: 0 10px 24px -8px rgb(216 27 96 / 0.35), 0 0 0 3px var(--surface);
+  }
+  h1 {
+    font-family: "Baloo 2", "Zen Maru Gothic", sans-serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    color: var(--pink-deep);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .tagline {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 30em;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent);
+    color: #4a2c0a;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 2px solid var(--ink);
+  }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px clamp(18px, 4vw, 30px);
+    margin-block-end: 20px;
+  }
+  section h2 {
+    font-family: "Baloo 2", "Zen Maru Gothic", sans-serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  section h2 .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--pink);
+    flex-shrink: 0;
+  }
+
+  details {
+    border-top: 1px solid var(--line);
+    padding-block: 14px;
+  }
+  details:first-of-type { border-top: none; padding-top: 2px; }
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.98rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary .arrow {
+    font-family: "Baloo 2", sans-serif;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  details[open] summary .arrow { transform: rotate(90deg); }
+  details p {
+    margin: 10px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    summary .arrow { transition: none; }
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pink);
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+  }
+  .contact-note {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    padding-top: 12px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="icon" alt="うさぎの30秒サバイバル アイコン" src="icon.png">
+    <span class="badge">サポートページ</span>
+    <h1>うさぎの30秒サバイバル</h1>
+    <p class="tagline">降ってくるアイテムをよけながら、うさぎを操作して30秒間生き残る避けゲー。</p>
+  </header>
+
+  <section aria-labelledby="faq-heading">
+    <h2 id="faq-heading"><span class="dot" aria-hidden="true"></span>よくある質問</h2>
+
+    <details open>
+      <summary><span>遊び方がわかりません</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>画面下の「ひだり」「みぎ」ボタン(またはキーボードの矢印キー)でうさぎを左右に動かし、上から降ってくるアイテムをよけてください。30秒間HPが0にならずに生き残れば成功です。</p>
+    </details>
+
+    <details>
+      <summary><span>アイテムの種類を教えてください</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>🥕にんじん(HP回復)、⭐スター(スコア+500)は取るとお得です。💀どくろ(ダメージ)、⚡️いなずま(急加速で操作しづらくなる)、💣爆弾(即アウト)は避けてください。</p>
+    </details>
+
+    <details>
+      <summary><span>20秒を超えると急に難しくなります</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>仕様です。20秒を超えると危険なアイテムの出現率と落下速度が上がる「猛攻ゾーン」に突入します。横移動する板でアイテムをブロックできるので活用してください。</p>
+    </details>
+
+    <details>
+      <summary><span>広告は表示されますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>Google AdMobによる広告を表示することがあります(ゲームオーバー時に一定確率で全画面広告)。アプリ内課金やアカウント登録はありません。</p>
+    </details>
+
+    <details>
+      <summary><span>どんなデータが収集されますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>本アプリ自体は個人情報を収集しません。広告表示のためGoogle AdMob SDKが広告識別子等を扱う場合があります。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="contact-heading">
+    <h2 id="contact-heading"><span class="dot" aria-hidden="true"></span>お問い合わせ</h2>
+    <div class="contact-row">
+      <a class="contact-btn" href="mailto:xhxrxcx@gmail.com?subject=%E3%81%86%E3%81%95%E3%81%8E%E3%81%AE30%E7%A7%92%E3%82%B5%E3%83%90%E3%82%A4%E3%83%90%E3%83%AB%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">
+        ✉️ メールで問い合わせる
+      </a>
+      <span class="contact-note">xhxrxcx@gmail.com</span>
+    </div>
+  </section>
+
+  <footer>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span aria-hidden="true"> ・ </span>
+    © 2026 RabbitSurvival
+  </footer>
+</div>

@@ -1,0 +1,96 @@
+<title>プライバシーポリシー</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf6ec;
+    --surface: #ffffff;
+    --ink: #1c1917;
+    --ink-soft: #57534e;
+    --red: #b91c1c;
+    --line: #e7ddc9;
+    --focus: #1d4ed8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1413; --surface: #241b19; --ink: #fdf6ec;
+      --ink-soft: #cbbfae; --red: #ef4444; --line: #3a2d28;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1413; --surface: #241b19; --ink: #fdf6ec;
+    --ink-soft: #cbbfae; --red: #ef4444; --line: #3a2d28;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    padding-inline: 20px;
+  }
+  a { color: var(--red); }
+  a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .wrap { max-width: 640px; margin: 0 auto; padding-block: 48px 64px; }
+  .back { font-size: 0.85rem; display: inline-block; margin-bottom: 18px; }
+  h1 {
+    font-family: "Darumadrop One", "Zen Maru Gothic", sans-serif;
+    color: var(--red);
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    margin: 0 0 4px;
+  }
+  .updated { color: var(--ink-soft); font-size: 0.82rem; margin: 0 0 28px; }
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px clamp(16px, 4vw, 26px);
+    margin-block-end: 16px;
+  }
+  section h2 {
+    font-size: 1rem;
+    margin: 0 0 8px;
+  }
+  section p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.8; }
+  footer { text-align: center; color: var(--ink-soft); font-size: 0.8rem; padding-top: 12px; }
+</style>
+
+<div class="wrap">
+  <a class="back" href="index.html">← サポートページに戻る</a>
+  <h1>プライバシーポリシー</h1>
+  <p class="updated">最終更新日: 2026年10月2日</p>
+
+  <section>
+    <h2>1. 収集する情報</h2>
+    <p>『ベンチプレス1RM』(以下「本アプリ」)は、氏名・メールアドレス等の個人情報、位置情報、利用状況データなど、いかなる情報も収集しません。アカウント登録・ログイン機能もありません。</p>
+  </section>
+
+  <section>
+    <h2>2. データの保存</h2>
+    <p>ゲームの進行状況やスコアは端末内にも保存されず、アプリを閉じると消去されます。外部のサーバーにデータが送信されることはありません。</p>
+  </section>
+
+  <section>
+    <h2>3. 外部通信</h2>
+    <p>本アプリは画面デザインの表示のため、外部CDN(Tailwind CSS)から静的なスタイルシートを読み込みます。これ以外に外部サーバーへ通信を行うことはありません。</p>
+  </section>
+
+  <section>
+    <h2>4. 第三者への提供</h2>
+    <p>本アプリは、いかなる情報も第三者に提供・販売しません。</p>
+  </section>
+
+  <section>
+    <h2>5. お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせは、<a href="index.html">サポートページ</a>のメールリンクよりご連絡ください。</p>
+  </section>
+
+  <section>
+    <h2>6. 改定</h2>
+    <p>本ポリシーは予告なく変更される場合があります。</p>
+  </section>
+
+  <footer>© 2026 ベンチプレス1RM</footer>
+</div>

@@ -1,0 +1,159 @@
+<title>講義室を探していますサポート</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef0e6;
+    --surface: #ffffff;
+    --ink: #15241f;
+    --ink-soft: #55655d;
+    --board: #1e3a32;
+    --board-deep: #142a24;
+    --pink: #e8305a;
+    --yellow-deep: #b8932a;
+    --line: #d8e0d9;
+    --focus: #1d4ed8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #142a24; --surface: #1e3a32; --ink: #eef0e6;
+      --ink-soft: #a9b8ad; --board: #cdf0e3; --board-deep: #eef0e6;
+      --pink: #f2a1b4; --yellow-deep: #f3df7a; --line: #2d4a40;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #142a24; --surface: #1e3a32; --ink: #eef0e6;
+    --ink-soft: #a9b8ad; --board: #cdf0e3; --board-deep: #eef0e6;
+    --pink: #f2a1b4; --yellow-deep: #f3df7a; --line: #2d4a40;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "DotGothic16", "Hiragino Maru Gothic ProN", sans-serif;
+    padding-inline: 20px;
+  }
+  a { color: var(--pink); text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .wrap { max-width: 640px; margin: 0 auto; padding-block: 48px 64px; }
+
+  header.hero {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 16px; padding-block: 12px 36px;
+  }
+  .icon {
+    width: 96px; height: 96px; border-radius: 22px;
+    box-shadow: 0 10px 24px -8px rgb(20 42 36 / 0.35), 0 0 0 3px var(--surface);
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--yellow-deep); color: var(--board-deep);
+    font-weight: 700; font-size: 0.78rem; padding: 5px 12px;
+    border-radius: 999px; border: 2px solid var(--ink);
+  }
+  h1 {
+    font-family: "Reggae One", "DotGothic16", sans-serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    color: var(--board); margin: 0; text-wrap: balance;
+  }
+  .tagline { color: var(--ink-soft); font-size: 0.95rem; margin: 0; max-width: 32em; }
+
+  section {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 24px clamp(18px, 4vw, 30px); margin-block-end: 20px;
+  }
+  section h2 {
+    font-family: "Reggae One", "DotGothic16", sans-serif;
+    font-size: 1.1rem; color: var(--ink); margin: 0 0 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  section h2 .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+
+  details { border-top: 1px solid var(--line); padding-block: 14px; }
+  details:first-of-type { border-top: none; padding-top: 2px; }
+  summary {
+    cursor: pointer; font-weight: 700; font-size: 0.98rem; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary .arrow {
+    font-family: "Reggae One", sans-serif; color: var(--yellow-deep);
+    transition: transform 0.2s ease; flex-shrink: 0;
+  }
+  details[open] summary .arrow { transform: rotate(90deg); }
+  details p { margin: 10px 0 0; color: var(--ink-soft); font-size: 0.92rem; line-height: 1.7; }
+  @media (prefers-reduced-motion: reduce) { summary .arrow { transition: none; } }
+
+  .contact-row { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+  .contact-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--pink); color: #fff; font-weight: 700;
+    padding: 10px 18px; border-radius: 12px; text-decoration: none;
+    border: 2px solid var(--ink);
+  }
+  .contact-note { font-size: 0.85rem; color: var(--ink-soft); }
+
+  footer { text-align: center; color: var(--ink-soft); font-size: 0.8rem; padding-top: 12px; }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="icon" alt="講義室を探しています アイコン" src="icon.png">
+    <span class="badge">サポートページ</span>
+    <h1>講義室を探しています</h1>
+    <p class="tagline">先輩から逃げて、逃げる講義室へダッシュ。大学→大学院→社会人、理不尽が続く爆笑サバイバルアクション。</p>
+  </header>
+
+  <section aria-labelledby="faq-heading">
+    <h2 id="faq-heading"><span class="dot" aria-hidden="true"></span>よくある質問</h2>
+
+    <details open>
+      <summary><span>遊び方がわかりません</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>画面をなぞった方向(またはキーボードの矢印キー・WASD)でキャラクターを動かして、逃げる講義室の扉を目指してください。「先輩」に触れるとサークルに入会させられて即終了。ビラを8枚受け取ってもLINE交換させられて終了です。</p>
+    </details>
+
+    <details>
+      <summary><span>講義室が近づくと逃げます</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>仕様です。講義室に近づくと、一定確率で別の場所に逃げてしまいます。焦らず追いかけてください。</p>
+    </details>
+
+    <details>
+      <summary><span>大学を卒業したら終わりですか？</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>いいえ。大学を卒業すると大学院編(教授から逃げながら研究室を目指す)に突入し、さらに修了すると社会人編(上司から逃げながら自分のデスクを目指す)に続きます。理不尽な人生は続きます。</p>
+    </details>
+
+    <details>
+      <summary><span>広告は表示されますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>Google AdMobによる広告を表示することがあります(ゲームオーバー3回につき1回、全画面広告。画面上部にバナー広告も表示されます)。アプリ内課金やアカウント登録はありません。</p>
+    </details>
+
+    <details>
+      <summary><span>どんなデータが収集されますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>本アプリ自体は個人情報を収集しません。広告表示のためGoogle AdMob SDKが広告識別子等を扱う場合があります。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="contact-heading">
+    <h2 id="contact-heading"><span class="dot" aria-hidden="true"></span>お問い合わせ</h2>
+    <div class="contact-row">
+      <a class="contact-btn" href="mailto:xhxrxcx@gmail.com?subject=%E8%AC%9B%E7%BE%A9%E5%AE%A4%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">
+        ✉️ メールで問い合わせる
+      </a>
+      <span class="contact-note">xhxrxcx@gmail.com</span>
+    </div>
+  </section>
+
+  <footer>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span aria-hidden="true"> ・ </span>
+    © 2026 ClassroomDash
+  </footer>
+</div>

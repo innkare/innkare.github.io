@@ -1,0 +1,245 @@
+<title>ベンチプレス1RM サポート</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf6ec;
+    --surface: #ffffff;
+    --ink: #1c1917;
+    --ink-soft: #57534e;
+    --red: #b91c1c;
+    --red-deep: #7f1d1d;
+    --yellow: #facc15;
+    --yellow-deep: #ca8a04;
+    --line: #e7ddc9;
+    --focus: #1d4ed8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1413;
+      --surface: #241b19;
+      --ink: #fdf6ec;
+      --ink-soft: #cbbfae;
+      --red: #ef4444;
+      --red-deep: #f87171;
+      --yellow: #facc15;
+      --yellow-deep: #fde047;
+      --line: #3a2d28;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1413;
+    --surface: #241b19;
+    --ink: #fdf6ec;
+    --ink-soft: #cbbfae;
+    --red: #ef4444;
+    --red-deep: #f87171;
+    --yellow: #facc15;
+    --yellow-deep: #fde047;
+    --line: #3a2d28;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+    padding-inline: 20px;
+  }
+  a { color: var(--red); text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-block: 48px 64px;
+  }
+
+  header.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding-block: 12px 36px;
+  }
+  .icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 22px;
+    box-shadow: 0 10px 24px -8px rgb(0 0 0 / 0.35), 0 0 0 3px var(--surface);
+  }
+  h1 {
+    font-family: "Darumadrop One", "Zen Maru Gothic", sans-serif;
+    font-size: clamp(1.7rem, 5vw, 2.4rem);
+    color: var(--red);
+    margin: 0;
+    text-wrap: balance;
+    letter-spacing: 0.02em;
+  }
+  .tagline {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0;
+    max-width: 30em;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow);
+    color: var(--red-deep);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 2px solid var(--ink);
+  }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px clamp(18px, 4vw, 30px);
+    margin-block-end: 20px;
+  }
+  section h2 {
+    font-family: "Darumadrop One", "Zen Maru Gothic", sans-serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  section h2 .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  details {
+    border-top: 1px solid var(--line);
+    padding-block: 14px;
+  }
+  details:first-of-type { border-top: none; padding-top: 2px; }
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.98rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary .arrow {
+    font-family: "Darumadrop One", sans-serif;
+    color: var(--yellow-deep);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  details[open] summary .arrow { transform: rotate(90deg); }
+  details p {
+    margin: 10px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    summary .arrow { transition: none; }
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red);
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+  }
+  .contact-note {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+    padding-top: 12px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="icon" alt="ベンチプレス1RM アイコン" src="icon.png">
+    <span class="badge">サポートページ</span>
+    <h1>ベンチプレス1RM</h1>
+    <p class="tagline">両手で超高速連打するだけの、硬派な顔して中身は全力でふざけているタップゲーム。</p>
+  </header>
+
+  <section aria-labelledby="faq-heading">
+    <h2 id="faq-heading"><span class="dot" aria-hidden="true"></span>よくある質問</h2>
+
+    <details open>
+      <summary><span>連打してもバーベルが全然挙がりません</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>要求タップ速度を上回る速さで連打し続ける必要があります。特に挙上の30〜65%は「スティッキングポイント」で要求速度が1.3倍になるので、そこだけさらに連打を加速してください。</p>
+    </details>
+
+    <details>
+      <summary><span>タップしても反応しないことがあります</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>画面の「両手で超高速連打！！」ボタンの範囲内を連打してください。範囲外や他の要素の上をタップしても反応しません。アプリを再起動しても改善しない場合はご連絡ください。</p>
+    </details>
+
+    <details>
+      <summary><span>課金や広告はありますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>ありません。アプリ内課金・広告・アカウント登録は一切なく、すべての機能を無料でご利用いただけます。</p>
+    </details>
+
+    <details>
+      <summary><span>どんなデータが保存・送信されますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>何も保存・送信していません。スコアなどの記録は端末内にも残らず、外部サーバーへの通信も行いません。</p>
+    </details>
+
+    <details>
+      <summary><span>重量は自由に決められますか</span><span class="arrow" aria-hidden="true">▸</span></summary>
+      <p>60kg・100kg・140kgのプリセットに加えて、20〜200kgの範囲で自分で重量を入力して挑戦することもできます。</p>
+    </details>
+  </section>
+
+  <section aria-labelledby="contact-heading">
+    <h2 id="contact-heading"><span class="dot" aria-hidden="true"></span>お問い合わせ</h2>
+    <div class="contact-row">
+      <a class="contact-btn" href="mailto:xhxrxcx@gmail.com?subject=%E3%83%99%E3%83%B3%E3%83%81%E3%83%97%E3%83%AC%E3%82%B91RM%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">
+        ✉️ メールで問い合わせる
+      </a>
+      <span class="contact-note">xhxrxcx@gmail.com</span>
+    </div>
+  </section>
+
+  <footer>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span aria-hidden="true"> ・ </span>
+    © 2026 ベンチプレス1RM
+  </footer>
+</div>
